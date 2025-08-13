@@ -66,7 +66,7 @@ public class ActividadDAO {
                 lista.add(a);
             }
         } catch (SQLException e) {
-            System.out.println("Error al listar participantes: " + e.getMessage());
+            System.out.println("Error al listar actividades: " + e.getMessage());
         }
         return lista;
     }
@@ -97,7 +97,7 @@ public class ActividadDAO {
         return null;
     }
     
-    //actualizar el evento
+    //actualizar actividad
     public boolean actualizar(Actividad actividad){
         String sql = "UPDATE Actividad SET codigo_evento = ?, tipo_actividad = ?, titulo_actividad = ?, correo_encargado = ?, hora_inicio = ?, hora_fin = ?, cupo_maximo = ? "
                 + "WHERE codigo_actividad = ?";
@@ -114,12 +114,12 @@ public class ActividadDAO {
             
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
-            System.out.println("Error al actualizar evento: " + e.getMessage());
+            System.out.println("Error al actualizar actividades: " + e.getMessage());
             return false;
         } 
     }
     
-    //eliminar evento
+    //eliminar actividad
     public boolean eliminar (String codigo){
         String sql = "DELETE FROM Actividad WHERE codigo_actividad = ? ";
         try (Connection conn = dbConnection.getConnection();
