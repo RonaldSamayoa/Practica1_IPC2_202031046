@@ -102,7 +102,7 @@ public class ParticipanteDAO {
         } 
     }
     
-    //eliminar evento
+    //eliminar participante
     public boolean eliminar (String correo){
         String sql = "DELETE FROM Participante WHERE correo = ? ";
         try (Connection conn = dbConnection.getConnection();

@@ -60,7 +60,7 @@ public class AsistenciaDAO {
         return lista;
     }
     
-    //busqueda por correo
+    //busqueda por id
     public Asistencia buscarPorId(int id){
         String sql = "SELECT * FROM Asistencia WHERE id_asistencia = ?";
         try (Connection conn = dbConnection.getConnection();
@@ -81,7 +81,7 @@ public class AsistenciaDAO {
         return null;
     }
     
-    //eliminar evento
+    //eliminar asistencia
     public boolean eliminar (int id){
         String sql = "DELETE FROM Asistencia WHERE id_asistencia = ? ";
         try (Connection conn = dbConnection.getConnection();
