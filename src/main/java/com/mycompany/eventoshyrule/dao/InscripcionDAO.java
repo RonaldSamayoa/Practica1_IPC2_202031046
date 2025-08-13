@@ -104,7 +104,7 @@ public class InscripcionDAO {
         } 
     }
     
-    //eliminar evento
+    //eliminar inscripcion
     public boolean eliminar (String id){
         String sql = "DELETE FROM Inscripcion WHERE id_inscripcion = ? ";
         try (Connection conn = dbConnection.getConnection();

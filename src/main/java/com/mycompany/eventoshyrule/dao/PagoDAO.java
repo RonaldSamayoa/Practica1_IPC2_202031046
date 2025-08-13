@@ -85,7 +85,7 @@ public class PagoDAO {
         return null;
     }
     
-    //actualizar al participante
+    //actualizar pago
     public boolean actualizar(Pago pago){
         String sql = "UPDATE Pago SET correo_participante = ?, codigo_evento = ?, monto = ? "
                 + "WHERE id_pago = ?";
@@ -104,7 +104,7 @@ public class PagoDAO {
         } 
     }
     
-    //eliminar evento
+    //eliminar pago
     public boolean eliminar (int id){
         String sql = "DELETE FROM Pago WHERE id_pago = ? ";
         try (Connection conn = dbConnection.getConnection();
