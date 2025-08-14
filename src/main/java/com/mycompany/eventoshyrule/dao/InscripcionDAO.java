@@ -63,12 +63,12 @@ public class InscripcionDAO {
     }
     
     //busqueda por id
-    public Inscripcion buscarPorId(String id){
+    public Inscripcion buscarPorId(int id){
         String sql = "SELECT * FROM Inscripcion WHERE id_inscripcion = ?";
         try (Connection conn = dbConnection.getConnection();
                 PreparedStatement ps = conn.prepareStatement(sql)){
                 
-            ps.setString(1, id);
+            ps.setInt(1, id);
             try(ResultSet rs = ps.executeQuery()){
                 if (rs.next()){
                     return new Inscripcion(
@@ -105,12 +105,12 @@ public class InscripcionDAO {
     }
     
     //eliminar inscripcion
-    public boolean eliminar (String id){
+    public boolean eliminar (int id){
         String sql = "DELETE FROM Inscripcion WHERE id_inscripcion = ? ";
         try (Connection conn = dbConnection.getConnection();
                 PreparedStatement ps = conn.prepareStatement(sql)){
             
-            ps.setString(1, id);
+            ps.setInt(1, id);
             return ps.executeUpdate()>0;
         } catch (SQLException e) {
             System.out.println("Error al eliminar inscripcion: " + e.getMessage());
