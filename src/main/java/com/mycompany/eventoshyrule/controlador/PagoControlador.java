@@ -1,5 +1,4 @@
 package com.mycompany.eventoshyrule.controlador;
-
 import com.mycompany.eventoshyrule.dao.EventoDAO;
 import com.mycompany.eventoshyrule.dao.InscripcionDAO;
 import com.mycompany.eventoshyrule.dao.PagoDAO;
