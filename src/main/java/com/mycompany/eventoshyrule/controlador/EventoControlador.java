@@ -2,6 +2,7 @@ package com.mycompany.eventoshyrule.controlador;
 
 import com.mycompany.eventoshyrule.dao.EventoDAO;
 import com.mycompany.eventoshyrule.modelo.Evento;
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class EventoControlador {
         this.eventoDAO = new EventoDAO();
     }
     
-    public boolean crearEvento(String codigo, Date fecha, String tipoEvento, String titulo, String ubicacion, int cupoMaximo){
+    public boolean crearEvento(String codigo, Date fecha, String tipoEvento, String titulo, String ubicacion, int cupoMaximo, BigDecimal costoInscripcion){
         if (codigo==null || codigo.isEmpty()) {
             System.out.println("El codigo del evento no puede estar vacio");
             return false;
@@ -42,7 +43,12 @@ public class EventoControlador {
             return false;
         }
         
-        Evento evento = new Evento(codigo, fecha, tipoEvento, titulo, ubicacion, cupoMaximo);
+        if (costoInscripcion.compareTo(BigDecimal.ZERO)< 0) {
+            System.out.println("El costo de la inscripcion al evento no puede ser menor a cero");
+            return false;
+        }
+        
+        Evento evento = new Evento(codigo, fecha, tipoEvento, titulo, ubicacion, cupoMaximo, costoInscripcion);
         return eventoDAO.insertar(evento);
     }
     
@@ -61,12 +67,12 @@ public class EventoControlador {
     }
     
     //actualizacion de eventos
-    public boolean actualizarEvento(String codigo, Date fecha, String tipoEvento, String titulo, String ubicacion, int cupoMaximo){
+    public boolean actualizarEvento(String codigo, Date fecha, String tipoEvento, String titulo, String ubicacion, int cupoMaximo, BigDecimal costoInscripcion){
         if (buscarEvento(codigo)== null) {
             System.out.println("No se puede actualizar o el evento no existe");
             return false;
         }
-        Evento evento = new Evento (codigo, fecha, tipoEvento, titulo, ubicacion, cupoMaximo);
+        Evento evento = new Evento (codigo, fecha, tipoEvento, titulo, ubicacion, cupoMaximo, costoInscripcion);
         return eventoDAO.actualizar(evento);
     }
     
@@ -77,6 +83,5 @@ public class EventoControlador {
             return false;
         }
         return eventoDAO.eliminar(codigo);
-    }
-    
+    }    
 }

@@ -1,4 +1,5 @@
 package com.mycompany.eventoshyrule.modelo;
+import java.math.BigDecimal;
 import java.sql.Date;
 
 /**
@@ -12,17 +13,19 @@ public class Evento {
     private String titulo;
     private String ubicacion;
     private int cupoMaximo;
+    private BigDecimal costoInscripcion;
     
     public Evento (){
     }
     
-    public Evento (String codigoEvento, Date fecha, String tipoEvento, String titulo, String ubicacion, int cupoMaximo){
+    public Evento (String codigoEvento, Date fecha, String tipoEvento, String titulo, String ubicacion, int cupoMaximo, BigDecimal costoInscripcion){
     this.codigoEvento = codigoEvento;
     this.fecha = fecha;
     this.tipoEvento = tipoEvento;
     this.titulo = titulo;
     this.ubicacion = ubicacion;
     this.cupoMaximo = cupoMaximo;
+    this.costoInscripcion = costoInscripcion;
     }
     
     public String getCodigoEvento(){
@@ -72,4 +75,12 @@ public class Evento {
     public void setCupoMaximo (int cupoMaximo){
         this.cupoMaximo = cupoMaximo;
     }
+    
+    public BigDecimal getCostoInscripcion (){
+        return costoInscripcion;
+    }
+    
+    public void setCostoInscripcion (BigDecimal costoInscripcion){
+        this.costoInscripcion = costoInscripcion;
+    }    
 }

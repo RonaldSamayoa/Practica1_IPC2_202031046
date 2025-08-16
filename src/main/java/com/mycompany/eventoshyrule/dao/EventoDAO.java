@@ -1,6 +1,7 @@
 package com.mycompany.eventoshyrule.dao;
 import com.mycompany.eventoshyrule.modelo.DBConnection;
 import com.mycompany.eventoshyrule.modelo.Evento;
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,8 +23,8 @@ public class EventoDAO {
 
     // insertar datos del evento
     public boolean insertar(Evento evento) {
-        String sql = "INSERT INTO Evento (codigo_evento, fecha, tipo_evento, titulo, ubicacion, cupo_maximo) "
-                   + "VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Evento (codigo_evento, fecha, tipo_evento, titulo, ubicacion, cupo_maximo, costo_inscripcion) "
+                   + "VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (Connection conn = dbConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
@@ -33,6 +34,7 @@ public class EventoDAO {
             ps.setString(4, evento.getTitulo());
             ps.setString(5, evento.getUbicacion());
             ps.setInt(6, evento.getCupoMaximo());
+            ps.setBigDecimal(7, evento.getCostoInscripcion());
 
             return ps.executeUpdate() > 0;
 
@@ -57,7 +59,8 @@ public class EventoDAO {
                     rs.getString("tipo_evento"),
                     rs.getString("titulo"),
                     rs.getString("ubicacion"),
-                    rs.getInt("cupo_maximo")
+                    rs.getInt("cupo_maximo"),
+                    rs.getBigDecimal("costo_inscripcion")
                 );
                 lista.add(e);
             }
@@ -82,7 +85,8 @@ public class EventoDAO {
                         rs.getString("tipo_evento"),
                         rs.getString("titulo"),
                         rs.getString("ubicacion"),
-                        rs.getInt("cupo_maximo")
+                        rs.getInt("cupo_maximo"),
+                        rs.getBigDecimal("costo_inscripcion")    
                     );
                 }
             }
@@ -94,7 +98,7 @@ public class EventoDAO {
 
     // actualizaciones 
     public boolean actualizar(Evento evento) {
-        String sql = "UPDATE Evento SET fecha = ?, tipo_evento = ?, titulo = ?, ubicacion = ?, cupo_maximo = ? "
+        String sql = "UPDATE Evento SET fecha = ?, tipo_evento = ?, titulo = ?, ubicacion = ?, cupo_maximo = ?, costo_inscripcion = ? "
                    + "WHERE codigo_evento = ?";
         try (Connection conn = dbConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -104,8 +108,8 @@ public class EventoDAO {
             ps.setString(3, evento.getTitulo());
             ps.setString(4, evento.getUbicacion());
             ps.setInt(5, evento.getCupoMaximo());
-            ps.setString(6, evento.getCodigoEvento());
-
+            ps.setBigDecimal(6, evento.getCostoInscripcion());
+            ps.setString(7, evento.getCodigoEvento());
             return ps.executeUpdate() > 0;
 
         } catch (SQLException e) {
