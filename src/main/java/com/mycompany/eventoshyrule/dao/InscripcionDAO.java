@@ -85,6 +85,30 @@ public class InscripcionDAO {
         return null;
     }
     
+    //busqueda por id
+    public Inscripcion buscarPorCorreoYEvento(String correoParticipante, String codigoEvento){
+        String sql = "SELECT * FROM Inscripcion WHERE correo_participante = ? AND codigo_evento = ?";
+        try (Connection conn = dbConnection.getConnection();
+                PreparedStatement ps = conn.prepareStatement(sql)){
+                
+            ps.setString(1, correoParticipante);
+            ps.setString(2, codigoEvento);
+            try(ResultSet rs = ps.executeQuery()){
+                if (rs.next()){
+                    return new Inscripcion(
+                    rs.getInt("id_inscripcion"),
+                    rs.getString("correo_participante"),
+                    rs.getString("codigo_evento"),
+                    rs.getString("tipo_inscripcion"),
+                    rs.getBoolean("validada")
+                    );}
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al buscar inscripcion por correo y evento: " + e.getMessage());
+        }
+        return null;
+    }
+    
     //actualizar la inscripcion
     public boolean actualizar(Inscripcion inscripcion){
         String sql = "UPDATE Inscripcion SET correo_participante = ?, codigo_evento = ?, tipo_inscripcion = ?, validada = ? "
