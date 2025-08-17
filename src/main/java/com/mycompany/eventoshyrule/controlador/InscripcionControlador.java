@@ -69,6 +69,17 @@ public class InscripcionControlador {
         return inscripcionDAO.actualizar(inscripcion);
     }
     
+    //validar la inscripcion por el correo del participante y el evento
+    public boolean validarInscripcion(String correo, String codigoEvento){
+        Inscripcion inscripcion = inscripcionDAO.buscarPorCorreoYEvento(correo, codigoEvento);
+        if (inscripcion == null) {
+            System.out.println("No existe una inscripcion del participante con correo: " + correo + "en el evento: " + codigoEvento);
+            return false;
+        }
+        inscripcion.setValidada(true);
+        return inscripcionDAO.actualizar(inscripcion);
+    }
+    
     //eliminar una inscripcion
     public boolean eliminarInscripcion(int idInscripcion){
         if (inscripcionDAO.buscarPorId(idInscripcion)==null) {
