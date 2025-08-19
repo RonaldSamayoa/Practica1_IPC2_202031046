@@ -1,7 +1,9 @@
 package com.mycompany.eventoshyrule.vista;
 
+import com.mycompany.eventoshyrule.parser.Parser;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 
 /**
  *
@@ -98,7 +100,7 @@ public class MainFrame extends JFrame{
         itemRegistrarA.addActionListener(e -> abrirVentana(new FrmActividad()));
         itemRegistrarAsis.addActionListener(e -> abrirVentana(new FrmAsistencia()));
         itemGenerarCert.addActionListener(e -> abrirVentana(new FrmCertificado()));
-        
+        itemCargar.addActionListener(e-> cargarArchivoParser());
         
         
     }
@@ -115,6 +117,17 @@ public class MainFrame extends JFrame{
             frame.setSelected(true);
         } catch (java.beans.PropertyVetoException ex) {
             ex.printStackTrace();
+        }
+    }
+    
+    private void cargarArchivoParser(){
+        JFileChooser fileChooser = new JFileChooser();
+        int opcion = fileChooser.showOpenDialog(this);
+        if (opcion == JFileChooser.APPROVE_OPTION) {
+            File file = fileChooser.getSelectedFile();
+            Parser parser = new Parser();
+            parser.parseFile(file.getAbsolutePath());
+            JOptionPane.showMessageDialog(this, "Archivo procesado: " + file.getName(), "Parser", JOptionPane.INFORMATION_MESSAGE);
         }
     }
             

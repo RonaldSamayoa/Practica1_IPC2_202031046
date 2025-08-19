@@ -82,7 +82,7 @@ public class Parser {
             }
             
             String comando = linea.substring(0, inicio).trim();
-            String argumentos = linea.substring( + 1, fin).trim();
+            String argumentos = linea.substring(inicio + 1, fin).trim();
             String[] args = argumentos.split("\",\"");
             
             //limpiar comillas
@@ -200,10 +200,10 @@ public class Parser {
                 } break;
             
             case "CERTIFICADO":
-                if (args.length == 3) {
+                if (args.length == 2) {
                     certificadoCtrl.registrarCertificado(args[0], args[1]);
                 } else{
-                    System.out.println("Error: CERTIFICADO requiere de 3 argumentos");
+                    System.out.println("Error: CERTIFICADO requiere de 2 argumentos");
                 } break;
                 
             default:

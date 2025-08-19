@@ -17,7 +17,7 @@ public class FrmCertificado extends JInternalFrame {
     
     public FrmCertificado(){
         setTitle("Gestion de certificados");
-        setSize(450,250);
+        setSize(450,350);
         setClosable(true);
         setIconifiable(true);
         setResizable(false);
