@@ -26,8 +26,8 @@ public class ActividadDAO {
         String sql = "INSERT INTO Actividad (codigo_actividad, codigo_evento, tipo_actividad, titulo_actividad, correo_encargado, hora_inicio, hora_fin, cupo_maximo)"
                 + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try(Connection conn = dbConnection.getConnection ();
-            PreparedStatement ps = conn.prepareStatement(sql)){
-          
+            PreparedStatement ps = conn.prepareStatement(sql)){  //para ejecutar los parametros query de entrada
+            // prepara los parametros con los valores del objeto
             ps.setString(1,actividad.getCodigoActividad());
             ps.setString(2,actividad.getCodigoEvento());
             ps.setString(3,actividad.getTipoActividad());
@@ -37,10 +37,10 @@ public class ActividadDAO {
             ps.setTime(7, actividad.getHoraFin());
             ps.setInt(8, actividad.getCupoMaximo());
             
-            return ps.executeUpdate()>0;
+            return ps.executeUpdate()>0;  //ejecuta la insercion y retorna true si fue exitosa
         } catch (SQLException e){
             System.out.println("Error al registrar actividad: " + e.getMessage());
-            return false;
+            return false; //false en caso de error
         }
     }
     
@@ -50,10 +50,10 @@ public class ActividadDAO {
         String sql = "SELECT * FROM Actividad";
         try (Connection conn = dbConnection.getConnection();
              Statement st = conn.createStatement();
-             ResultSet rs = st.executeQuery(sql)){
+             ResultSet rs = st.executeQuery(sql)){  //ejecuta query y obtiene resultados
             
-            while (rs.next()){
-                Actividad a = new Actividad(
+            while (rs.next()){  
+                Actividad a = new Actividad(  //  crea un objeto a partir de los dato de la fila actual
                    rs.getString("codigo_actividad"), 
                    rs.getString("codigo_evento"),
                    rs.getString("tipo_actividad"),
@@ -77,7 +77,7 @@ public class ActividadDAO {
         try (Connection conn = dbConnection.getConnection();
                 PreparedStatement ps = conn.prepareStatement(sql)){
                 
-            ps.setString(1, codigo);
+            ps.setString(1, codigo); //asigna el codigo como parametro
             try(ResultSet rs = ps.executeQuery()){
                 if (rs.next()){
                     return new Actividad(
@@ -89,7 +89,7 @@ public class ActividadDAO {
                     rs.getTime("hora_inicio"),
                     rs.getTime("hora_fin"),
                     rs.getInt("cupo_maximo")
-                    );}
+                    );} //retorna un objeto con los datos encontrados 
             }
         } catch (SQLException e) {
             System.out.println("Error al buscar actividad: " + e.getMessage());

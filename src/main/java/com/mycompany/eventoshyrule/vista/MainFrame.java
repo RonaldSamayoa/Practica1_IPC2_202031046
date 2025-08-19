@@ -94,10 +94,13 @@ public class MainFrame extends JFrame{
         setJMenuBar(menuBar);
         
         itemRegistrarP.addActionListener(e -> abrirVentana(new FrmParticipante()));
+        itemListarP.addActionListener(e -> abrirVentana(new FrmListarParticipantes()));
         itemRegistrarE.addActionListener(e -> abrirVentana(new FrmEvento()));
+        itemListarE.addActionListener(e -> abrirVentana(new FrmListarEventos()));
         itemRegistrarI.addActionListener(e -> abrirVentana(new FrmInscripcion()));
         itemRegistrarPago.addActionListener(e -> abrirVentana(new FrmPago()));
         itemRegistrarA.addActionListener(e -> abrirVentana(new FrmActividad()));
+        itemListarA.addActionListener(e -> abrirVentana(new FrmListaActividades()));
         itemRegistrarAsis.addActionListener(e -> abrirVentana(new FrmAsistencia()));
         itemGenerarCert.addActionListener(e -> abrirVentana(new FrmCertificado()));
         itemCargar.addActionListener(e-> cargarArchivoParser());
@@ -125,6 +128,11 @@ public class MainFrame extends JFrame{
         int opcion = fileChooser.showOpenDialog(this);
         if (opcion == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();
+            
+            //ruta fija
+            String outputDir = "reportes";
+            new File(outputDir).mkdirs();
+            
             Parser parser = new Parser();
             parser.parseFile(file.getAbsolutePath());
             JOptionPane.showMessageDialog(this, "Archivo procesado: " + file.getName(), "Parser", JOptionPane.INFORMATION_MESSAGE);

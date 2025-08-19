@@ -36,7 +36,7 @@ public class ParticipanteControlador {
     }
     
     //listar a los participantes
-    public List<Participante> listarEventos(){
+    public List<Participante> listarParticipantes(){
         return participanteDAO.listarTodos();
     }
     
@@ -60,7 +60,7 @@ public class ParticipanteControlador {
     }
     
     //elimunar a un participante
-    public boolean eliminarEvento(String correo){
+    public boolean eliminarParticipante(String correo){
         if (buscarParticipante(correo)== null) {
             System.out.println("No se puede eliminar o el participante no esta registrado");
             return false;

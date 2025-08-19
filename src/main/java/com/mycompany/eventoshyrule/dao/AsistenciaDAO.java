@@ -26,12 +26,12 @@ public class AsistenciaDAO {
         String sql = "INSERT INTO Asistencia (correo_participante, codigo_actividad)"
                 + "VALUES (?, ?)";
         try(Connection conn = dbConnection.getConnection ();
-            PreparedStatement ps = conn.prepareStatement(sql)){
-          
+            PreparedStatement ps = conn.prepareStatement(sql)){ //para ejecutar los parametros query de entrada
+            // prepara los parametros con los valores del objeto
             ps.setString(1,asistencia.getCorreoParticipante());
             ps.setString(2,asistencia.getCodigoActividad());
             
-            return ps.executeUpdate()>0;
+            return ps.executeUpdate()>0; //ejecuta la insercion y retorna true si fue exitosa
         } catch (SQLException e){
             System.out.println("Error al registrar asistencia: " + e.getMessage());
             return false;
@@ -44,7 +44,7 @@ public class AsistenciaDAO {
         String sql = "SELECT * FROM Asistencia";
         try (Connection conn = dbConnection.getConnection();
              Statement st = conn.createStatement();
-             ResultSet rs = st.executeQuery(sql)){
+             ResultSet rs = st.executeQuery(sql)){ //ejecuta query y obtiene resultados
             
             while (rs.next()){
                 Asistencia a = new Asistencia(
