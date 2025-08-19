@@ -104,7 +104,7 @@ public class MainFrame extends JFrame{
         itemRegistrarAsis.addActionListener(e -> abrirVentana(new FrmAsistencia()));
         itemGenerarCert.addActionListener(e -> abrirVentana(new FrmCertificado()));
         itemCargar.addActionListener(e-> cargarArchivoParser());
-        
+        itemGenerarReporte.addActionListener(e -> abrirVentana(new FrmReportes()));
         
     }
     

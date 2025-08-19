@@ -16,7 +16,9 @@ com/mycompany/eventoshyrule/dao/PagoDAO.class
 com/mycompany/eventoshyrule/modelo/Pago.class
 com/mycompany/eventoshyrule/controlador/CertificadoControlador.class
 com/mycompany/eventoshyrule/vista/FrmListaActividades.class
+com/mycompany/eventoshyrule/controlador/ReporteControlador.class
 com/mycompany/eventoshyrule/modelo/Evento.class
+com/mycompany/eventoshyrule/vista/FrmReportes.class
 com/mycompany/eventoshyrule/controlador/EventoControlador.class
 com/mycompany/eventoshyrule/vista/MainFrame.class
 com/mycompany/eventoshyrule/modelo/Participante.class
