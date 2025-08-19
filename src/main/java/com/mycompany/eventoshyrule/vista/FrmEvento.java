@@ -45,7 +45,7 @@ public class FrmEvento extends JInternalFrame{
         panelForm.add(new JLabel ("* Fecha: "));
         txtFecha = new JDateChooser(); //calendario
         txtFecha.setDateFormatString("dd/MM/yyyy"); //formato
-        panelForm.add(txtCodigo);
+        panelForm.add(txtFecha);
         
         panelForm.add(new JLabel("*  Tipo de evento: "));
         cbTipoEvento = new JComboBox<>(new String[]{"CHARLA", "CONGRESO","TALLER", "DEBATE"});

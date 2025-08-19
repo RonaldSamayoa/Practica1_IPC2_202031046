@@ -33,7 +33,7 @@ public class FrmActividad extends JInternalFrame{
         actividadCtrl = new ActividadControlador();
         
         //panel de formulario 
-        JPanel panelForm = new JPanel(new GridLayout(7, 2, 10, 10));
+        JPanel panelForm = new JPanel(new GridLayout(8, 2, 10, 10));
         panelForm.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         
         panelForm.add(new JLabel ("* Codigo de actividad "));
