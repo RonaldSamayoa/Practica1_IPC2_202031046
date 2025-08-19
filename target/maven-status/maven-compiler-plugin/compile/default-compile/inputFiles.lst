@@ -2,7 +2,9 @@
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/modelo/Certificado.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/vista/FrmParticipante.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/controlador/PagoControlador.java
+/home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/vista/FrmPago.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/EventosHyrule.java
+/home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/vista/FrmEvento.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/modelo/DBConnection.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/modelo/Participante.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/modelo/Pago.java
@@ -19,8 +21,10 @@
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/controlador/ParticipanteControlador.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/dao/InscripcionDAO.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/modelo/Evento.java
+/home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/vista/FrmInscripcion.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/controlador/AsistenciaControlador.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/controlador/EventoControlador.java
+/home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/vista/FrmActividad.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/dao/EventoDAO.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/modelo/Asistencia.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/modelo/Actividad.java
