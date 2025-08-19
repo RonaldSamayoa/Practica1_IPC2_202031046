@@ -13,6 +13,7 @@
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/controlador/InscripcionControlador.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/modelo/Inscripcion.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/dao/CertificadoDAO.java
+/home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/vista/FrmAsistencia.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/controlador/ActividadControlador.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/dao/PagoDAO.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/dao/ActividadDAO.java
@@ -22,6 +23,7 @@
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/dao/InscripcionDAO.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/modelo/Evento.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/vista/FrmInscripcion.java
+/home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/vista/FrmCertificado.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/controlador/AsistenciaControlador.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/controlador/EventoControlador.java
 /home/ronald/NetBeansProjects/EventosHyrule/src/main/java/com/mycompany/eventoshyrule/vista/FrmActividad.java

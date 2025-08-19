@@ -201,7 +201,7 @@ public class Parser {
             
             case "CERTIFICADO":
                 if (args.length == 3) {
-                    certificadoCtrl.registrarCertificado(args[0], args[1], args[2]);
+                    certificadoCtrl.registrarCertificado(args[0], args[1]);
                 } else{
                     System.out.println("Error: CERTIFICADO requiere de 3 argumentos");
                 } break;
