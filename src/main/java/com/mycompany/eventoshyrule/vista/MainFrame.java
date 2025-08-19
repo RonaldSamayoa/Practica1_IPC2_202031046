@@ -90,12 +90,34 @@ public class MainFrame extends JFrame{
         menuBar.add(menuReportes);
         
         setJMenuBar(menuBar);
+        
+        itemRegistrarP.addActionListener(e -> abrirVentana(new FrmParticipante()));
+        itemRegistrarE.addActionListener(e -> abrirVentana(new FrmEvento()));
+        itemRegistrarI.addActionListener(e -> abrirVentana(new FrmInscripcion()));
+        itemRegistrarPago.addActionListener(e -> abrirVentana(new FrmPago()));
+        itemRegistrarA.addActionListener(e -> abrirVentana(new FrmActividad()));
+        itemRegistrarAsis.addActionListener(e -> abrirVentana(new FrmAsistencia()));
+        itemGenerarCert.addActionListener(e -> abrirVentana(new FrmCertificado()));
+        
+        
+        
     }
     
     public JDesktopPane getDesktopPane(){
         return desktopPane;
     }
     
+    
+    private void abrirVentana(JInternalFrame frame){
+        desktopPane.add(frame);
+        frame.setVisible(true);
+        try {
+            frame.setSelected(true);
+        } catch (java.beans.PropertyVetoException ex) {
+            ex.printStackTrace();
+        }
+    }
+            
     public static void main(String[] args) {
         SwingUtilities.invokeLater(()-> {
             new MainFrame().setVisible(true);

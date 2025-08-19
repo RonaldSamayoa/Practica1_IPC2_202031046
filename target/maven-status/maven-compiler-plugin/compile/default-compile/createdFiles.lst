@@ -5,6 +5,7 @@ com/mycompany/eventoshyrule/vista/FrmActividad.class
 com/mycompany/eventoshyrule/EventosHyrule.class
 com/mycompany/eventoshyrule/modelo/Certificado.class
 com/mycompany/eventoshyrule/dao/CertificadoDAO.class
+com/mycompany/eventoshyrule/vista/FrmCertificado.class
 com/mycompany/eventoshyrule/dao/ActividadDAO.class
 com/mycompany/eventoshyrule/controlador/ActividadControlador.class
 com/mycompany/eventoshyrule/vista/FrmEvento.class
@@ -19,6 +20,7 @@ com/mycompany/eventoshyrule/controlador/EventoControlador.class
 com/mycompany/eventoshyrule/vista/MainFrame.class
 com/mycompany/eventoshyrule/modelo/Participante.class
 com/mycompany/eventoshyrule/vista/FrmPago.class
+com/mycompany/eventoshyrule/vista/FrmAsistencia.class
 com/mycompany/eventoshyrule/vista/FrmParticipante.class
 com/mycompany/eventoshyrule/controlador/AsistenciaControlador.class
 com/mycompany/eventoshyrule/modelo/Actividad.class
