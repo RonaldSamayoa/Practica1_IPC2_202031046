@@ -1,11 +1,13 @@
 com/mycompany/eventoshyrule/controlador/InscripcionControlador.class
 com/mycompany/eventoshyrule/dao/InscripcionDAO.class
 com/mycompany/eventoshyrule/dao/ParticipanteDAO.class
+com/mycompany/eventoshyrule/vista/FrmActividad.class
 com/mycompany/eventoshyrule/EventosHyrule.class
 com/mycompany/eventoshyrule/modelo/Certificado.class
 com/mycompany/eventoshyrule/dao/CertificadoDAO.class
 com/mycompany/eventoshyrule/dao/ActividadDAO.class
 com/mycompany/eventoshyrule/controlador/ActividadControlador.class
+com/mycompany/eventoshyrule/vista/FrmEvento.class
 com/mycompany/eventoshyrule/dao/AsistenciaDAO.class
 com/mycompany/eventoshyrule/parser/Parser.class
 com/mycompany/eventoshyrule/modelo/Asistencia.class
@@ -16,11 +18,13 @@ com/mycompany/eventoshyrule/modelo/Evento.class
 com/mycompany/eventoshyrule/controlador/EventoControlador.class
 com/mycompany/eventoshyrule/vista/MainFrame.class
 com/mycompany/eventoshyrule/modelo/Participante.class
+com/mycompany/eventoshyrule/vista/FrmPago.class
 com/mycompany/eventoshyrule/vista/FrmParticipante.class
 com/mycompany/eventoshyrule/controlador/AsistenciaControlador.class
 com/mycompany/eventoshyrule/modelo/Actividad.class
 com/mycompany/eventoshyrule/controlador/PagoControlador.class
 com/mycompany/eventoshyrule/modelo/DBConnection.class
 com/mycompany/eventoshyrule/modelo/Inscripcion.class
+com/mycompany/eventoshyrule/vista/FrmInscripcion.class
 com/mycompany/eventoshyrule/dao/EventoDAO.class
 com/mycompany/eventoshyrule/controlador/ParticipanteControlador.class
