@@ -15,7 +15,7 @@ public class ParticipanteControlador {
     }
     
     //crear participante
-    public boolean crearParticipante(String correo, String nombreCompleto, String tipoParticipante, String institucion){
+    public boolean crearParticipante(String nombreCompleto, String tipoParticipante, String institucion, String correo){
         if (correo==null || correo.isEmpty()) {
             System.out.println("El correo del participante no puede estar vacio");
             return false;
@@ -31,7 +31,7 @@ public class ParticipanteControlador {
             return false;
         }
         
-        Participante participante = new Participante (correo, nombreCompleto, tipoParticipante, institucion);
+        Participante participante = new Participante (nombreCompleto, tipoParticipante, institucion, correo);
         return participanteDAO.insertar(participante);
     }
     
@@ -50,7 +50,7 @@ public class ParticipanteControlador {
     }
     
     //actualizacion de participantes
-    public boolean actualizarParticipante(String correo, String nombreCompleto, String tipoParticipante, String institucion){
+    public boolean actualizarParticipante(String nombreCompleto, String tipoParticipante, String institucion, String correo){
         if (buscarParticipante(correo)== null) {
             System.out.println("No se puede actualizar o el participante no esta registrado");
             return false;

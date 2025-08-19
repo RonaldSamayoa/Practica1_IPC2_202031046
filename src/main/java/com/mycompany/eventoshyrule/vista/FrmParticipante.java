@@ -71,7 +71,7 @@ public class FrmParticipante extends JInternalFrame {
             return;
         }
         
-        boolean exito = participanteCtrl.crearParticipante(correo, nombreCompleto, tipoParticipante, institucion.isEmpty() ? null : institucion);
+        boolean exito = participanteCtrl.crearParticipante(nombreCompleto, tipoParticipante, institucion.isEmpty() ? null : institucion, correo);
         if (exito) {
             JOptionPane.showMessageDialog(this, "Participante registrado con exito", "Exito", JOptionPane.INFORMATION_MESSAGE);
             limpiarCampos();

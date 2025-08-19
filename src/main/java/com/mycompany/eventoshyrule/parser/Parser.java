@@ -83,7 +83,7 @@ public class Parser {
             
             String comando = linea.substring(0, inicio).trim();
             String argumentos = linea.substring(inicio + 1, fin).trim();
-            String[] args = argumentos.split("\",\"");
+            String[] args = argumentos.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
             
             //limpiar comillas
             for (int i = 0; i < args.length; i++) {
@@ -99,16 +99,16 @@ public class Parser {
     //ejecutar la sentencia segun el comando ingresado
     private void ejecutarComando(String comando, String[] args) throws ParseException{
         switch (comando.toUpperCase()) {
-            case "PARTICIPANTE":
+            case "REGISTRO_PARTICIPANTE":
                 if (args.length == 4) {
-                    String institucion = parseNullable(args[3]);
-                    participanteCtrl.crearParticipante(args[0], args[1], args[2], institucion);
+                    String institucion = parseNullable(args[2]);
+                    participanteCtrl.crearParticipante(args[0], args[1], institucion, args[3] );
                 } else{
                     System.out.println("Error: Participante requiere de 4 argumentos");
                 }
                 break;
                 
-            case "EVENTO":
+            case "REGISTRO_EVENTO":
                 if (args.length == 7) {
                     try {
                         int cupo = Integer.parseInt(args[5]);
@@ -166,7 +166,7 @@ public class Parser {
                     System.out.println("Error: VALIDAR_INSCRIPCION requiere de 2 argumentos");
                 } break;
                 
-            case "ACTIVIDAD":
+            case "REGISTRO_ACTIVIDAD":
                 if (args.length == 8) {
                     try {
                         int cupoAct = Integer.parseInt(args[7]);

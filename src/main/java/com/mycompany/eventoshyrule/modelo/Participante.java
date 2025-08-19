@@ -12,7 +12,7 @@ public class Participante {
     
     public Participante(){}
     
-    public Participante(String correo, String nombreCompleto, String tipoParticipante, String institucion){
+    public Participante(String nombreCompleto, String tipoParticipante, String institucion, String correo){
         this.correo = correo;
         this.nombreCompleto = nombreCompleto;
         this.tipoParticipante = tipoParticipante;

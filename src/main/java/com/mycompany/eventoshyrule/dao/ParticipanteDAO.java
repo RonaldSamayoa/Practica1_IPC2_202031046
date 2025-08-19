@@ -22,15 +22,15 @@ public class ParticipanteDAO {
     
     //insertar datos 
     public boolean insertar (Participante participante) {
-        String sql = "INSERT INTO Participante (correo, nombre_completo, tipo_participante, institucion)"
+        String sql = "INSERT INTO Participante (nombre_completo, tipo_participante, institucion, correo)"
                 + "VALUES (?, ?, ?, ?)";
         try(Connection conn = dbConnection.getConnection ();
             PreparedStatement ps = conn.prepareStatement(sql)){
           
-            ps.setString(1,participante.getCorreo());
-            ps.setString(2,participante.getNombreCompleto());
-            ps.setString(3,participante.getTipoParticipante());
-            ps.setString(4,participante.getInstitucion());
+            ps.setString(1,participante.getNombreCompleto());
+            ps.setString(2,participante.getTipoParticipante());
+            ps.setString(3,participante.getInstitucion());
+            ps.setString(4,participante.getCorreo());
             
             return ps.executeUpdate()>0;
         } catch (SQLException e){
