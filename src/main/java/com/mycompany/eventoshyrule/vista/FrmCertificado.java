@@ -9,7 +9,6 @@ import java.awt.*;
 public class FrmCertificado extends JInternalFrame {
     private JTextField txtCorreoParticipante;
     private JTextField txtCodigoEvento;
-    private JTextField txtRutaArchivo;
     private JButton btnGuardar;
     private JButton btnCancelar;
     
