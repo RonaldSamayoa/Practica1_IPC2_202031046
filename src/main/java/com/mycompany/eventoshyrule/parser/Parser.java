@@ -6,6 +6,7 @@ import com.mycompany.eventoshyrule.controlador.EventoControlador;
 import com.mycompany.eventoshyrule.controlador.InscripcionControlador;
 import com.mycompany.eventoshyrule.controlador.PagoControlador;
 import com.mycompany.eventoshyrule.controlador.ParticipanteControlador;
+import com.mycompany.eventoshyrule.controlador.ReporteControlador;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -27,6 +28,7 @@ public class Parser {
     private ActividadControlador actividadCtrl;
     private AsistenciaControlador asistenciaCtrl;
     private CertificadoControlador certificadoCtrl;
+    private ReporteControlador reporteCtrl;
     
     public Parser(){
         this.participanteCtrl = new ParticipanteControlador();
@@ -36,6 +38,7 @@ public class Parser {
         this.actividadCtrl = new ActividadControlador();
         this.asistenciaCtrl = new AsistenciaControlador();
         this.certificadoCtrl = new CertificadoControlador();
+        this.reporteCtrl = new ReporteControlador();
     }
     
     // metodo para leer el archivo y procesar linea por linea
@@ -204,6 +207,27 @@ public class Parser {
                     certificadoCtrl.registrarCertificado(args[0], args[1]);
                 } else{
                     System.out.println("Error: CERTIFICADO requiere de 2 argumentos");
+                } break;
+            
+            case "REPORTE_PARTICIPANTES":
+                if (args.length == 3) {
+                    reporteCtrl.generarReporteParticipantes(args[0], args[1], args[2]);
+                } else{
+                    System.out.println("Error: CERTIFICADO requiere de 3 argumentos");
+                } break;
+                
+            case "REPORTE_ACTIVIDADES":
+                if (args.length == 3) {
+                    reporteCtrl.generarReporteActividades(args[0], args[1], args[2]);
+                } else{
+                    System.out.println("Error: CERTIFICADO requiere de 3 argumentos");
+                } break;
+                
+             case "REPORTE_EVENTOS":
+                if (args.length == 5) {
+                    reporteCtrl.generarReporteEventos(args[0], args[1], args[2], args[3], args[4]);
+                } else{
+                    System.out.println("Error: CERTIFICADO requiere de 5 argumentos");
                 } break;
                 
             default:
